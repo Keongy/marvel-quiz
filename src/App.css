@@ -19,15 +19,15 @@
 /* MEDIA QUERIES */
 
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css?family=Anton|Bangers|Carter+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Anton|Bangers|Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
 
 :root {
   --white-color: #ffffff;
-  --light-grey-color: #eae8e8;
+  --light-grey-color: #EAE8E8;
   --light-green-color: #1ecc78;
   --green-color: #0cb765;
-  --red-color: #eb1d27;
+  --red-color: #EB1D27;
   --blue-color: #4f78a4;
   --dark-red-color: #d31017;
   --dark-grey-color: #363636;
@@ -36,11 +36,11 @@
 }
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
   font-size: 70px;
   color: var(--white-color);
   font-weight: normal;
@@ -53,7 +53,7 @@ h1 {
 h1 a {
   color: inherit;
   text-decoration: none;
-  font-family: "Bangers", cursive;
+  font-family: 'Bangers', cursive;
 }
 
 h1 a:hover {
@@ -64,7 +64,7 @@ h2,
 h3 {
   font-weight: normal;
   text-align: left;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
@@ -307,8 +307,8 @@ footer {
   transition: 0.2s ease-in;
 }
 
-.formContent .inputBox input:focus ~ label,
-.formContent .inputBox input:valid ~ label {
+.formContent .inputBox input:focus~label,
+.formContent .inputBox input:valid~label {
   top: -30px;
   left: 0;
   color: var(--white-color);
@@ -430,8 +430,8 @@ button[disabled]:hover {
   right: 0;
   bottom: 0;
   background-color: var(--light-grey-color);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
@@ -442,15 +442,15 @@ button[disabled]:hover {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: var(--red-color);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -861,8 +861,8 @@ input:checked + .slider:before {
 }
 
 @media screen and (max-width: 1110px) {
-  /* make container full width */
-  .container {
+   /* make container full width */
+   .container {
     flex: 0 1 100%;
   }
 
@@ -876,4 +876,5 @@ input:checked + .slider:before {
   .formBoxRight {
     flex: 0 1 100%;
   }
+
 }
