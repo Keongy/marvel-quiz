@@ -7,21 +7,21 @@ import Signup from '../Signup';
 import Welcome from '../Welcome';
 import ErrorPage from '../ErrorPage'
 import '../../App.css';
+import ForgetPassword from '../ForgetPassword';
 
 
 function App() {
   return (
     <Router>
       <Header />
-
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/login" component={Login} />
         <Route path="/welcome" component={Welcome} />
         <Route path="/signup" component={Signup} />
+        <Route path="/forgetpassword" component={ForgetPassword} />
         <Route component={ErrorPage} />
       </Switch>
-
       <Footer />
     </Router>
   );
