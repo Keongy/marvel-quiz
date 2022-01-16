@@ -1,5 +1,8 @@
 import 'firebase/compat/auth';
 import app from 'firebase/compat/app';
+import 'firebase/firestore' 
+
+
 
 const config = {
     apiKey: "AIzaSyBpqJMx_pV1LUUurvloKGSoypxuRwx7u30",
@@ -15,6 +18,7 @@ class Firebase {
         app.initializeApp(config);
         this.auth = app.auth();
     }
+
 
     //inscription
     signupUser = (email, password) =>
@@ -33,11 +37,13 @@ class Firebase {
     //     this.auth.sendPasswordResetEmail(email);
     //     this.auth.useDeviceLanguage();
     // }
-    passwordReset = email => 
+    passwordReset = email =>
         this.auth.sendPasswordResetEmail(email);
 
     //Langue de l'email en fonction du navigateur
     lang = () => this.auth.useDeviceLanguage();
+
+    user = uid => this.db.doc(`users/${uid}`);
 
 }
 

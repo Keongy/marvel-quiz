@@ -26,7 +26,13 @@ const Signup = (props) => {
         e.preventDefault();
         const { email, password, pseudo } = loginData
         firebase.signupUser(email, password)
-            .then(user => {
+            .then(authUser => {
+                return firebase.user(authUser.user.uid).set({
+                    pseudo,
+                    email
+                })
+            })
+            .then(() => {
                 setLoginData({ ...data })
                 setError('')
                 props.history.push('/welcome')
@@ -37,7 +43,7 @@ const Signup = (props) => {
             })
     }
 
-    
+
 
     const btn = pseudo === '' || email === '' || password === '' || confirmPassword !== password ? <button disabled>Inscription</button> : <button>Inscription</button>
 
