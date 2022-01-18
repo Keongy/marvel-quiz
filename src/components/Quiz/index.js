@@ -78,7 +78,10 @@ class Quiz extends Component {
     nextQuestion = () => {
 
         if (this.state.idQuestion === this.state.maxQuestions - 1) {
-            this.gameOver()
+            this.setState({
+                quizzEnd: true
+            })
+
         } else {
             this.setState(prevState => ({
                 idQuestion: prevState.idQuestion + 1
@@ -133,6 +136,14 @@ class Quiz extends Component {
         if (this.props.userData.pseudo !== prevProps.userData.pseudo) {
             this.showToastMsg(this.props.userData.pseudo)
         }
+
+
+        if (this.state.quizzEnd !== prevState.quizzEnd) {
+            const gradePercent = this.getPercent(this.state.score, this.state.maxQuestions)
+            this.gameOver(gradePercent)
+        }
+
+
     }
 
     submitAnswer = selectedAnswer => {
@@ -144,19 +155,14 @@ class Quiz extends Component {
 
     getPercent = (ourScore, maxQuest) => Math.round(100 * (ourScore) / maxQuest)
 
-    gameOver = () => {
-
-        const gradePercent = this.getPercent(this.state.score, this.state.maxQuestions)
-
+    gameOver = gradePercent => {
         gradePercent >= 50 ? this.setState({
             quizLevel: this.state.quizLevel + 1,
             percent: gradePercent,
-            quizzEnd: true
         })
             :
             this.setState({
                 percent: gradePercent,
-                quizzEnd: true
             })
     }
 
