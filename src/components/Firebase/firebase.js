@@ -1,7 +1,6 @@
-import 'firebase/compat/auth';
 import app from 'firebase/compat/app';
-import 'firebase/firestore' 
-
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore'
 
 
 const config = {
@@ -13,12 +12,13 @@ const config = {
     appId: "1:557843584601:web:9e6b362cc1bbd0468e4348"
 };
 
+
 class Firebase {
     constructor() {
         app.initializeApp(config);
         this.auth = app.auth();
+        this.db = app.firestore();
     }
-
 
     //inscription
     signupUser = (email, password) =>
@@ -43,7 +43,7 @@ class Firebase {
     //Langue de l'email en fonction du navigateur
     lang = () => this.auth.useDeviceLanguage();
 
-    user = uid => this.db.doc(`users/${uid}`);
+    user = uid => this.db.doc(`users/${uid}`)
 
 }
 
