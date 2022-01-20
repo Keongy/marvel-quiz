@@ -18,7 +18,7 @@ function App() {
         <Header />
 
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/marvel-quiz" component={Landing} />
           <Route path="/login" component={Login} />
           <Route path="/welcome" component={Welcome} />
           <Route path="/signup" component={Signup} />

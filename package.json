@@ -1,6 +1,6 @@
 {
-  "homepage": "http://keongy.github.io/marvel-quiz",
   "name": "marvel-quiz",
+  "homepage": "http://keongy.github.io/marvel-quiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
