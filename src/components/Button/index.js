@@ -1,9 +1,14 @@
 import React from 'react';
 
-const Button = ({ label, className, handleClick }) => {
-    console.log("clicked");
+const Button = ({ children, onClick, className, disabled }) => {
     return (
-        <button onClick={handleClick} className={className}>{label}</button>
+        <button
+            onClick={onClick}
+            className={className}
+            disabled={disabled}
+        >
+            {children}
+        </button>
     );
 };
 

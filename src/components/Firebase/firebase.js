@@ -4,12 +4,12 @@ import 'firebase/compat/firestore'
 
 
 const config = {
-    apiKey: "AIzaSyBpqJMx_pV1LUUurvloKGSoypxuRwx7u30",
-    authDomain: "marvel-quiz-73e58.firebaseapp.com",
-    projectId: "marvel-quiz-73e58",
-    storageBucket: "marvel-quiz-73e58.appspot.com",
-    messagingSenderId: "557843584601",
-    appId: "1:557843584601:web:9e6b362cc1bbd0468e4348"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 
@@ -32,11 +32,7 @@ class Firebase {
     //disconnect
     signoutUser = () => this.auth.signOut();
 
-    //resetPassword
-    // passwordReset = (email) => {
-    //     this.auth.sendPasswordResetEmail(email);
-    //     this.auth.useDeviceLanguage();
-    // }
+    //Reset password
     passwordReset = email =>
         this.auth.sendPasswordResetEmail(email);
 

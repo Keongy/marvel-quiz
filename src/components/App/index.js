@@ -14,7 +14,7 @@ import { IconContext } from "react-icons";
 function App() {
   return (
     <Router>
-      <IconContext.Provider  value={{ style: { verticalAlign: 'middle' } }}>
+      <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         <Header />
 
         <Switch>

@@ -1,38 +1,35 @@
 import React, { Component } from 'react'
 import { QuizMarvel } from '../QuizMarvel/'
 import Levels from '../Levels';
-import ProgressBar from '../ProgressBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import QuizzOver from '../QuizOver';
 import { FaChevronRight } from "react-icons/fa";
+import ProgressBar from '../ProgressBar';
+import Button from '../Button';
 
-
+const initialState = {
+    levelNames: ["debutant", "confirme", "expert"],
+    quizLevel: 0,
+    maxQuestions: 10,
+    storedQuestions: [],
+    question: null,
+    options: [],
+    idQuestion: 0,
+    btnDisabled: true,
+    userAnswer: null,
+    score: 0,
+    showWelcomeMsg: false,
+    quizzEnd: false,
+}
 class Quiz extends Component {
 
     constructor(props) {
         super(props)
 
-        this.initialState = {
-            levelNames: ["debutant", "confirme", "expert"],
-            quizLevel: 0,
-            maxQuestions: 10,
-            storedQuestions: [],
-            question: null,
-            options: [],
-            idQuestion: 0,
-            btnDisabled: true,
-            userAnswer: null,
-            score: 0,
-            showWelcomeMsg: false,
-            quizzEnd: false,
-        }
-
-        this.state = this.initialState;
+        this.state = initialState;
         this.storedDataRef = React.createRef();
     }
-
-
 
     loadQuestions = quizz => {
         const fetchedArrayQuiz = QuizMarvel[0].quizz[quizz];
@@ -44,12 +41,8 @@ class Quiz extends Component {
 
             this.setState({ storedQuestions: newArray })
 
-        } else {
-            console.log("Pas assez de questions!!!");
         }
     }
-
-
 
     showToastMsg = (pseudo) => {
 
@@ -143,8 +136,6 @@ class Quiz extends Component {
             const gradePercent = this.getPercent(this.state.score, this.state.maxQuestions)
             this.gameOver(gradePercent)
         }
-
-
     }
 
     submitAnswer = selectedAnswer => {
@@ -168,7 +159,7 @@ class Quiz extends Component {
     }
 
     loadLevelQuestions = param => {
-        this.setState({ ...this.initialState, quizLevel: param })
+        this.setState({ ...initialState, quizLevel: param })
         this.loadQuestions(this.state.levelNames[param])
     }
 
@@ -202,13 +193,13 @@ class Quiz extends Component {
                 <ProgressBar idQuestion={this.state.idQuestion} maxQuestions={this.state.maxQuestions} />
                 <h2>{this.state.question}</h2>
                 {displayOptions}
-                <button
+                <Button
+                    className={'btnSubmit'}
                     disabled={this.state.btnDisabled}
-                    className="btnSubmit"
                     onClick={this.nextQuestion}
                 >
                     {this.state.idQuestion < this.state.maxQuestions - 1 ? "Suivant" : "Terminer"}
-                </button>
+                </Button>
             </>
         )
     }

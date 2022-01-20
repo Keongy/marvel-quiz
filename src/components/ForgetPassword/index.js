@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button';
 import { FirebaseContext } from '../Firebase';
 
 const ForgetPassword = (props) => {
@@ -33,9 +34,6 @@ const ForgetPassword = (props) => {
         setEmail(e.target.value)
     }
 
-
-    const btn = <button>Récupérer</button>
-
     return (
         <div className="signUpLoginBox">
             <div className="slContainer">
@@ -43,8 +41,6 @@ const ForgetPassword = (props) => {
                 </div>
                 <div className="formBoxRight">
                     <div className="formContent">
-
-
                         {
                             success && <span
                                 style={{
@@ -55,18 +51,14 @@ const ForgetPassword = (props) => {
                                 {success}
                             </span>
                         }
-
                         {error && <span>{error}</span>}
-
                         <h2>Mot de passe oublié ?</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="inputBox">
                                 <input onChange={handleChange} type="email" id='email' value={email} autoComplete='off' required />
                                 <label htmlFor="email">Email</label>
                             </div>
-
-
-                            {btn}
+                            <Button>Récupérer</Button>
                         </form>
                         <div className="linkContainer">
                             <Link className='simpleLink' to='/login'>déjà inscrit ? Connectez-vous.</Link>

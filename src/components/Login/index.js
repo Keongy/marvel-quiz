@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '../Button';
 import { FirebaseContext } from '../Firebase';
 
 const Login = (props) => {
@@ -37,7 +38,7 @@ const Login = (props) => {
 
     const errorMsg = <span>{error.message}</span>
 
-    const btn = (loginData.password.length < 6) ? <button disabled>Connexion</button> : <button>Connexion</button>
+    const btn = (loginData.password.length < 6) ? <Button disabled={true}>Connexion</Button> : <Button>Connexion</Button>
 
     const { email, password } = loginData
 
@@ -55,7 +56,6 @@ const Login = (props) => {
                                 <input onChange={handleChange} type="email" id='email' value={email} autoComplete='off' required />
                                 <label htmlFor="email">Email</label>
                             </div>
-
                             <div className="inputBox">
                                 <input onChange={handleChange} type="password" id='password' value={password} autoComplete='off' required />
                                 <label htmlFor="password">Mot de passe</label>

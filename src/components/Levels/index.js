@@ -6,15 +6,11 @@ const Levels = ({ quizLevel, levelNames }) => {
 
 
     useEffect(() => {
-
         const step = levelNames.map(level => ({
             title: level.toUpperCase()
         }))
         setLevels(step)
     }, [levelNames])
-
-
-
 
     return (
         <div className='levelsContainer' style={{ background: 'transparent' }}>

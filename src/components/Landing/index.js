@@ -25,7 +25,6 @@ const Landing = () => {
         refWolverine.current.classList.remove("leftImg", "rightImg")
     }
 
-
     return (
         <main ref={refWolverine} className='welcomePage startingImg'>
             <div className="leftBox">
