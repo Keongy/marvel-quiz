@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e83e18c8.css",
+    "main.js": "/static/js/main.f43b08cb.js",
+    "static/media/bg-noise-texture.png": "/static/media/bg-noise-texture.78eacb5efbf473356f4a.png",
+    "static/media/spiderman.png": "/static/media/spiderman.54be21cf9a4177790824.png",
+    "static/media/xmen.png": "/static/media/xmen.294b1d93cdb93b8fd135.png",
+    "static/media/deadpool.png": "/static/media/deadpool.c9d280ad1150746a65c7.png",
+    "static/media/ironman.png": "/static/media/ironman.48dc4dc5dc767ebd4261.png",
+    "static/media/wolverine.png": "/static/media/wolverine.a67e427ce210b5240a1e.png",
+    "static/media/griffes-gauche.png": "/static/media/griffes-gauche.37577397b8ba87adde33.png",
+    "static/media/griffes-droit.png": "/static/media/griffes-droit.085de5685b6a33d9f1da.png",
+    "index.html": "/index.html",
+    "main.e83e18c8.css.map": "/static/css/main.e83e18c8.css.map",
+    "main.f43b08cb.js.map": "/static/js/main.f43b08cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e83e18c8.css",
+    "static/js/main.f43b08cb.js"
+  ]
+}
