@@ -16,7 +16,7 @@ const QuizzOver = React.forwardRef((props, ref) => {
         loadLevelQuestions,
     } = props;
 
-    const API_PUBLIC_KEY = process.env.REACT_APP_MARVEL_API_KEY
+    const API_PUBLIC_KEY = process.env.REACT_APP_UNSPLASH_API_KEY
 
     const hash = process.env.REACT_APP_MARVEL_HASH
 
@@ -24,7 +24,6 @@ const QuizzOver = React.forwardRef((props, ref) => {
     const [openModal, setOpenModal] = useState(false)
     const [characterInfos, setCharacterInfos] = useState([]);
     const [loading, setLoading] = useState(true);
-
     useEffect(() => {
         setAsked(ref.current)
 
@@ -58,6 +57,8 @@ const QuizzOver = React.forwardRef((props, ref) => {
                 .then(response => {
                     setCharacterInfos(response.data)
                     setLoading(false)
+                    console.log('jkfdsjk');
+                    console.log('API', API_PUBLIC_KEY);
 
                     localStorage.setItem(id, JSON.stringify(response.data))
                     if (!localStorage.getItem('marvelStorageDate')) {
